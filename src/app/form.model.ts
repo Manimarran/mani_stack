@@ -44,13 +44,6 @@ export const FormModel: DynamicFormControlModel[] = [
           },
         ],
       }),
-      new DynamicInputModel({
-        id: 'workflow',
-        label: 'Workflow',
-        required: false,
-        value: 'MSC',
-        placeholder: 'Workflow',
-      }),
 
       new DynamicInputModel({
         id: 'emailId',
