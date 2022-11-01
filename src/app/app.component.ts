@@ -1,11 +1,13 @@
 import { Component, OnInit, VERSION } from '@angular/core';
-import { FormModel } from './form.model';
+import { FormModel, NEW_FORM_MODEL } from './form.model';
 import {
+  DynamicFormArrayModel,
   DynamicFormControlModel,
+  DynamicFormLayout,
   DynamicFormModel,
   DynamicFormService,
 } from '@ng-dynamic-forms/core';
-import { FormGroup } from '@angular/forms';
+import { FormArray, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'my-app',
@@ -15,11 +17,17 @@ import { FormGroup } from '@angular/forms';
 export class AppComponent implements OnInit {
   name = 'Angular ' + VERSION.major;
   formGroup: FormGroup;
+  formGroup1: FormGroup;
   formTemplate: DynamicFormControlModel[] = FormModel;
-
+  formArrayModel: any;
+  formArrayControl: any;
   constructor(private formService: DynamicFormService) {}
 
   ngOnInit() {
     this.formGroup = this.formService.createFormGroup(this.formTemplate);
+  }
+
+  register() {
+    console.log(this.formGroup1);
   }
 }

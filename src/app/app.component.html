@@ -1,12 +1,17 @@
 
 
-<div class="" style="width: 50%;">
-  hello
+<div class="overflow-hidden content-margin container-fluid" style="width: 80%;">
   <form [formGroup]="formGroup">
     <dynamic-ng-bootstrap-form
       [group]="formGroup"
       [model]="formTemplate"
+      [layout]="formLayout"
     ></dynamic-ng-bootstrap-form>
+    <div class="row">
+    <button type="button" class="btn-success" (click)="register()">Register</button>&nbsp;
+    <!-- <button type="button" class="btn-danger" (click)="clear()">Remove all items from array</button> -->
+  </div>
+    
   </form>
 </div>
 
