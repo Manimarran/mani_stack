@@ -1,5 +1,5 @@
 import { Component, OnInit, VERSION } from '@angular/core';
-import { FormModel, NEW_FORM_MODEL } from './form.model';
+import { FormModel } from './form.model';
 import {
   DynamicFormArrayModel,
   DynamicFormControlModel,
@@ -21,7 +21,9 @@ export class AppComponent implements OnInit {
   formTemplate: DynamicFormControlModel[] = FormModel;
   formArrayModel: any;
   formArrayControl: any;
-  constructor(private formService: DynamicFormService) {}
+  constructor(private formService: DynamicFormService) {
+    console.log('Welcome')
+  }
 
   ngOnInit() {
     this.formGroup = this.formService.createFormGroup(this.formTemplate);

@@ -7,7 +7,7 @@ import {
   DynamicFormControlModel,
   DynamicFormGroupModel,
   DynamicSelectModel,
-  DynamicTextAreaModel
+  DynamicTextAreaModel,
 } from '@ng-dynamic-forms/core';
 
 export const FormModel: DynamicFormControlModel[] = [
@@ -61,40 +61,29 @@ export const FormModel: DynamicFormControlModel[] = [
         placeholder: 'Enter the mobile no',
       }),
 
-      //   new DynamicFormArrayModel({
-      //     id: "myFormArray",
-      //     initialCount: 5,
-      //     groupFactory: () => {
-      //         return [
-      //             new DynamicInputModel({
-      //                 id: "myInput",
-      //                 label: "My Input"
-      //             })
-      //         ];
-      //     }
-      // }),
       new DynamicFormArrayModel({
-        id: "parentFormArray",
+        id: 'parentFormArray',
         groupFactory: () => {
-            return [
-                new DynamicTextAreaModel({
-                    id: "address",
-                    label: "Address"
-                }),
-                new DynamicInputModel({
-                  id: "city",
-                  label: "City"
-              }), new DynamicInputModel({
-                id: "state",
-                label: "State"
+          return [
+            new DynamicTextAreaModel({
+              id: 'address',
+              label: 'Address',
             }),
             new DynamicInputModel({
-              id: "counrty",
-              label: "Country"
-          })
-            ];
-        }
-    }),
+              id: 'city',
+              label: 'City',
+            }),
+            new DynamicInputModel({
+              id: 'state',
+              label: 'State',
+            }),
+            new DynamicInputModel({
+              id: 'counrty',
+              label: 'Country',
+            }),
+          ];
+        },
+      }),
 
       new DynamicCheckboxModel({
         id: 'sampleCheckbox',
@@ -103,4 +92,3 @@ export const FormModel: DynamicFormControlModel[] = [
     ],
   }),
 ];
-
